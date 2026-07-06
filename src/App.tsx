@@ -262,12 +262,27 @@ export default function App() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="map-caps-wide text-2xl">Östersjön</div>
               <div className="map-caps text-base">Teckenförklaring</div>
               <div className="legend-text text-base">
                 Köping och större municipalsamhälle — Archivo Narrow för förklaringar och tabeller.
               </div>
               <div className="font-mono text-sm">SKALA 1:600 000 · Courier Prime (1955)</div>
+            </CardContent>
+          </Card>
+          <Card className="md:col-span-2">
+            <CardHeader>
+              <CardTitle className="legend-text text-sm text-muted-foreground">
+                Havets versaler — Josefin Sans{" "}
+                <span className="italic">(after the hairline sea-name lettering; add .reverse-italic for the hydrographic backslant)</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-5 text-secondary-foreground dark:text-secondary">
+              <div className="map-caps-wide text-4xl">Östersjön</div>
+              <div className="map-sea text-2xl">Öresund</div>
+              <span className="legend-text text-sm text-muted-foreground block">
+                .map-caps-wide — sea names, upright · .map-sea — the same lettering in reverse italic, as
+                printed over open water · font-sea composes with reverse-italic for everything else.
+              </span>
             </CardContent>
           </Card>
           <Card className="md:col-span-2">
