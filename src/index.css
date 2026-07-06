@@ -213,11 +213,14 @@
     display: inline-block;
     transform: skewX(12deg);
   }
-  /* water label preset: backslanted serif with a whisper of tracking */
+  /* water label preset: backslanted light geometric with a whisper of
+     tracking — on the sheet, reefs and roadsteads (Falsterbo rev,
+     Malmö redd) are lettered in a light monoline italic leaning left */
   .map-water {
     display: inline-block;
     transform: skewX(12deg);
-    font-family: var(--font-heading);
+    font-family: var(--font-sea);
+    font-weight: 350;
     letter-spacing: 0.06em;
   }
   /* sea label preset: the full hydrographic treatment — hairline

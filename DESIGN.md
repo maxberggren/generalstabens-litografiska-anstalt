@@ -36,9 +36,10 @@ positive skewX leans left in screen coordinates):
 
 - `.reverse-italic` — bare backslant, composes with any font utility
   (`font-sea reverse-italic`, `map-caps-wide reverse-italic`, …).
-- `.map-water` — the water-label preset: backslanted Bodoni Moda with
-  `0.06em` tracking. Use it for anything liquid: streams of data, live feeds,
-  flows.
+- `.map-water` — the water-label preset: backslanted light Jost with
+  `0.06em` tracking, matching the sheet's monoline water italics
+  (*Falsterbo rev*, *Malmö redd*). Use it for anything liquid: streams of
+  data, live feeds, flows.
 - `.map-sea` — the sea-label preset: the hairline sea capitals (Jost,
   `font-sea`) at `0.4em` tracking in the reverse italic — the full
   ÖSTERSJÖN treatment, as lettered over open water. Upright variant:
@@ -53,8 +54,8 @@ positive skewX leans left in screen coordinates):
   `.map-caps-wide` (Jost hairline, `0.4em`) for "sea names" — big
   quiet labels.
 - Body and UI: Archivo. Legend/table text: Archivo Narrow (`.legend-text`).
-- Italic serif (Bodoni Moda italic) plays the role of the map's italic water
-  labels — use it for asides and captions.
+- Italic serif (Bodoni Moda italic) is the credit-line voice — use it for
+  asides and captions.
 
 ## 2 · Palette — the litho inks
 

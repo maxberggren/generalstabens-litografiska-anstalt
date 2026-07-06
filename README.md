@@ -5,8 +5,10 @@
 Reverse-engineered from *SKÅNE* (utarbetad av Isak Mattsson och Nils Sjögren,
 P.A. Norstedt & Söners Förlag), printed by **Generalstabens Litografiska
 Anstalt, Stockholm**, and approved for publication in rikets allmänna kartverk
-on 22 October 1951. The palette was sampled from photographs of the sheet and
-white-balanced against the paper stock.
+on 22 October 1951. The palette and lettering were sampled from photographs of
+the sheet and white-balanced against the paper stock. This is the reference:
+
+![The 1951 SKÅNE sheet — the reference](docs/skane-1951-reference.jpg)
 
 The look in one sentence: **soft litho inks on aged wove paper — a didone
 title voice, letterspaced grotesque capitals, hairline black rules, and a warm
@@ -32,12 +34,16 @@ vermillion.**
 | Role | Face | Why |
 |---|---|---|
 | Display | **Bodoni Moda** | The didone title lettering of *SKÅNE* |
-| UI / labels | **Archivo** | The Venus/Akzidenz-style grotesque map labels |
+| UI / labels | **Archivo** | The Venus/Akzidenz-style grotesque map labels (SMÅLAND, TECKENFÖRKLARING) |
+| Sea & water names | **Jost** | The hairline geometric sea capitals (Ö S T E R S J Ö N) and the light monoline water italics (*Falsterbo rev*) |
 | Legend / tables | **Archivo Narrow** | The condensed legend lettering |
 | Figures / code | **Courier Prime** | Courier was drawn in 1955 — period-correct |
 
-Plus the **hydrographic backslant** (`.reverse-italic` / `.map-water`): the
-left-leaning cartographic italic used for water names, rebuilt with a 12° skew.
+Plus the **hydrographic backslant** (`.reverse-italic`): the left-leaning
+cartographic italic the sheet uses over water, rebuilt with a 12° skew.
+`.map-caps-wide` sets the letterspaced sea capitals upright, `.map-sea` is the
+same lettering backslanted, and `.map-water` backslants the lowercase water
+voice — all matched against the photographed sheet.
 
 ## Palette
 
@@ -65,8 +71,8 @@ sequential data.
 ![Palette](docs/screenshots/palette.png)
 
 ### II · Typograferna — the lettering
-Bodoni Moda display, Archivo grotesques, Courier Prime figures, and the
-reverse-italic water lettering.
+Bodoni Moda display, Archivo grotesques, Jost sea capitals, Courier Prime
+figures, and the reverse-italic water lettering.
 
 ![Typography](docs/screenshots/typography.png)
 
@@ -181,16 +187,17 @@ adopt it in an existing shadcn app:
 
    ```bash
    npm install @fontsource-variable/bodoni-moda @fontsource-variable/archivo \
-     @fontsource-variable/archivo-narrow @fontsource/courier-prime
+     @fontsource-variable/archivo-narrow @fontsource-variable/jost \
+     @fontsource/courier-prime
    ```
 
 2. **Tokens & utilities** — copy the theme block from
    [`src/index.css`](src/index.css) into your global CSS: the font imports,
    the `@theme inline` font/color declarations, the `:root` and `.dark`
    token sets, and the `@layer utilities` block (`.map-caps`,
-   `.frame-double`, `.chamfer`, `.rule-railway`, `.pattern-marsh`,
-   `.pattern-hatch`, `.texture-paper`, `.reverse-italic`, `.map-water`,
-   `.legend-text`, `.blankett-lines`).
+   `.map-caps-wide`, `.frame-double`, `.chamfer`, `.rule-railway`,
+   `.pattern-marsh`, `.pattern-hatch`, `.texture-paper`, `.reverse-italic`,
+   `.map-water`, `.map-sea`, `.legend-text`, `.blankett-lines`).
 
 3. **Components** — copy [`src/components/ui/`](src/components/ui) over your
    own `components/ui` directory. These are stock shadcn (radix-nova base)
