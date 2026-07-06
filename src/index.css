@@ -8,16 +8,16 @@
 /*  Generalstabens Litografiska Anstalt, Stockholm).                  */
 /*                                                                    */
 /*  Type: Bodoni Moda (didone title lettering) · Archivo (grotesque   */
-/*  map labels) · Archivo Narrow (condensed legend) · Josefin Sans    */
-/*  (hairline sea-name lettering — Ö S T E R S J Ö N) · Courier       */
-/*  Prime (1955 typewriter, for code/figures).                        */
+/*  map labels) · Archivo Narrow (condensed legend) · Jost (hairline  */
+/*  sea-name lettering — Ö S T E R S J Ö N) · Courier Prime (1955     */
+/*  typewriter, for code/figures).                                    */
 /* ------------------------------------------------------------------ */
 
 @import "@fontsource-variable/bodoni-moda";
 @import "@fontsource-variable/bodoni-moda/wght-italic.css";
 @import "@fontsource-variable/archivo";
 @import "@fontsource-variable/archivo-narrow";
-@import "@fontsource-variable/josefin-sans";
+@import "@fontsource-variable/jost";
 @import "@fontsource/courier-prime";
 
 @custom-variant dark (&:is(.dark *));
@@ -26,7 +26,7 @@
     --font-heading: 'Bodoni Moda Variable', 'Bodoni Moda', Didot, 'Playfair Display', serif;
     --font-sans: 'Archivo Variable', 'Archivo', 'Helvetica Neue', sans-serif;
     --font-condensed: 'Archivo Narrow Variable', 'Archivo Narrow', 'Arial Narrow', sans-serif;
-    --font-sea: 'Josefin Sans Variable', 'Josefin Sans', Futura, 'Century Gothic', sans-serif;
+    --font-sea: 'Jost Variable', 'Jost', Futura, 'Century Gothic', sans-serif;
     --font-mono: 'Courier Prime', 'Courier New', monospace;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
@@ -197,7 +197,7 @@
     font-weight: 500;
   }
   /* sea-name lettering, matched to the sheet's Ö S T E R S J Ö N —
-     hairline geometric caps (Josefin Sans) at enormous tracking */
+     hairline geometric caps (Jost) at enormous tracking */
   .map-caps-wide {
     font-family: var(--font-sea);
     text-transform: uppercase;

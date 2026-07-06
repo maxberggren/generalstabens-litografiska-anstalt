@@ -23,7 +23,7 @@ web match:
 | Sheet title **SKÅNE** | Hand-drawn didone capitals (Nordisk Antikva / Bodoni tradition): extreme thick–thin contrast, hairline serifs, vertical stress | **Bodoni Moda** (variable, incl. italic) | Truest widely-available didone; at black weight in caps it is near-identical to the title |
 | Credit line *"Utarbetad av …"* | Bold didone italic | **Bodoni Moda Italic** | Same voice, same sheet |
 | Map labels, TECKENFÖRKLARING | Early German/Swedish grotesque (Venus-Grotesk / Akzidenz family), often letterspaced caps | **Archivo** | A grotesque drawn from the same 19th-century lineage; neutral, slightly squarish |
-| Sea names, **ÖSTERSJÖN** | Hairline monoline geometric caps, hand-lettered at enormous tracking over open water | **Josefin Sans** (variable, wght ≈300) | Matched against a photograph of the sheet: same hairline stroke, narrow geometric S/E/T, deep hooked J, round Ö with floating dots — a 1920s-Scandinavian geometric, fittingly |
+| Sea names, **ÖSTERSJÖN** | Hairline monoline geometric caps, hand-lettered at enormous tracking over open water | **Jost** (variable, wght ≈300) | Matched against a photograph of the sheet: same hairline monoline stroke and round geometric caps in the Futura tradition, with the hooked descending J |
 | Legend entries, tables, small text | Condensed grotesque | **Archivo Narrow** | The condensed cut of the same family |
 | Figures, scale statements, code | (n/a — era flavour) | **Courier Prime** | Courier was drawn in 1955; period-correct typewriter voice for numerals/code |
 
@@ -39,8 +39,8 @@ positive skewX leans left in screen coordinates):
 - `.map-water` — the water-label preset: backslanted Bodoni Moda with
   `0.06em` tracking. Use it for anything liquid: streams of data, live feeds,
   flows.
-- `.map-sea` — the sea-label preset: the hairline sea capitals (Josefin
-  Sans, `font-sea`) at `0.6em` tracking in the reverse italic — the full
+- `.map-sea` — the sea-label preset: the hairline sea capitals (Jost,
+  `font-sea`) at `0.6em` tracking in the reverse italic — the full
   ÖSTERSJÖN treatment, as lettered over open water. Upright variant:
   `.map-caps-wide`.
 
@@ -50,7 +50,7 @@ positive skewX leans left in screen coordinates):
   title moments, italic for subtitles/flavour.
 - The signature texture of the map is **letterspaced capitals**:
   `.map-caps` (Archivo, tracking `0.35em`) for section headings,
-  `.map-caps-wide` (Josefin Sans hairline, `0.6em`) for "sea names" — big
+  `.map-caps-wide` (Jost hairline, `0.6em`) for "sea names" — big
   quiet labels.
 - Body and UI: Archivo. Legend/table text: Archivo Narrow (`.legend-text`).
 - Italic serif (Bodoni Moda italic) plays the role of the map's italic water

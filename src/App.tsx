@@ -272,7 +272,7 @@ export default function App() {
           <Card className="md:col-span-2">
             <CardHeader>
               <CardTitle className="legend-text text-sm text-muted-foreground">
-                Havets versaler — Josefin Sans{" "}
+                Havets versaler — Jost{" "}
                 <span className="italic">(after the hairline sea-name lettering; add .reverse-italic for the hydrographic backslant)</span>
               </CardTitle>
             </CardHeader>

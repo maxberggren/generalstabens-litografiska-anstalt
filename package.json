@@ -14,7 +14,7 @@
     "@fontsource-variable/archivo-narrow": "^5.2.8",
     "@fontsource-variable/bodoni-moda": "^5.2.7",
     "@fontsource-variable/geist": "^5.2.9",
-    "@fontsource-variable/josefin-sans": "^5.2.8",
+    "@fontsource-variable/jost": "^5.2.8",
     "@fontsource/courier-prime": "^5.2.8",
     "@tailwindcss/vite": "^4.3.2",
     "class-variance-authority": "^0.7.1",
