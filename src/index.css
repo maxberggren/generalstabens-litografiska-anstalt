@@ -1,0 +1,267 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* ------------------------------------------------------------------ */
+/*  GENERALSTABEN 1951 — a design system drawn from the 1951 school   */
+/*  wall map of SKÅNE (P.A. Norstedt & Söners Förlag, printed by      */
+/*  Generalstabens Litografiska Anstalt, Stockholm).                  */
+/*                                                                    */
+/*  Type: Bodoni Moda (didone title lettering) · Archivo (grotesque   */
+/*  map labels) · Archivo Narrow (condensed legend) · Courier Prime   */
+/*  (1955 typewriter, for code/figures).                              */
+/* ------------------------------------------------------------------ */
+
+@import "@fontsource-variable/bodoni-moda";
+@import "@fontsource-variable/bodoni-moda/wght-italic.css";
+@import "@fontsource-variable/archivo";
+@import "@fontsource-variable/archivo-narrow";
+@import "@fontsource/courier-prime";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: 'Bodoni Moda Variable', 'Bodoni Moda', Didot, 'Playfair Display', serif;
+    --font-sans: 'Archivo Variable', 'Archivo', 'Helvetica Neue', sans-serif;
+    --font-condensed: 'Archivo Narrow Variable', 'Archivo Narrow', 'Arial Narrow', sans-serif;
+    --font-mono: 'Courier Prime', 'Courier New', monospace;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    /* hypsometric tint ramp — sea → shore → lowland → ridge */
+    --color-sea: var(--sea);
+    --color-shallows: var(--shallows);
+    --color-meadow: var(--meadow);
+    --color-pasture: var(--pasture);
+    --color-lowland: var(--lowland);
+    --color-sand: var(--sand);
+    --color-apricot: var(--apricot);
+    --color-dune: var(--dune);
+    --color-boundary: var(--boundary);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    /* paper & ink */
+    --background: #F2EDDE;            /* aged wove paper */
+    --foreground: #26231C;            /* soft litho ink black */
+    --card: #F8F4E7;                  /* brighter legend-box paper */
+    --card-foreground: #26231C;
+    --popover: #F8F4E7;
+    --popover-foreground: #26231C;
+    /* stad-vermillion — the red of city dots & landskapsgräns */
+    --primary: #BE3A2B;
+    --primary-foreground: #F8F4E7;
+    /* Öresund blue */
+    --secondary: #A9C8CF;
+    --secondary-foreground: #1F3A41;
+    /* lowland sand */
+    --muted: #E9E2C8;
+    --muted-foreground: #6E6650;
+    /* hypsometric apricot */
+    --accent: #EAC094;
+    --accent-foreground: #53361D;
+    --destructive: #9E2F21;
+    --border: #CFC5A6;
+    --input: #CFC5A6;
+    --ring: #BE3A2B;
+    /* chart ramp = litho spot inks */
+    --chart-1: #BE3A2B;               /* vermillion */
+    --chart-2: #47694F;               /* länsgräns green */
+    --chart-3: #8FB6BF;               /* sea blue */
+    --chart-4: #DFA470;               /* dune orange */
+    --chart-5: #D8C285;               /* sand yellow */
+    --radius: 0rem;                   /* print has no rounded corners */
+    --sidebar: #ECE5D0;
+    --sidebar-foreground: #26231C;
+    --sidebar-primary: #BE3A2B;
+    --sidebar-primary-foreground: #F8F4E7;
+    --sidebar-accent: #E9E2C8;
+    --sidebar-accent-foreground: #26231C;
+    --sidebar-border: #CFC5A6;
+    --sidebar-ring: #BE3A2B;
+    /* full hypsometric ramp from the map legend */
+    --sea: #A6C4CB;
+    --shallows: #C7DCE0;
+    --meadow: #B3BF8F;
+    --pasture: #CFD0A3;
+    --lowland: #E7DFBD;
+    --sand: #EFDBA9;
+    --apricot: #ECC398;
+    --dune: #E2A873;
+    --boundary: #47694F;
+}
+
+/* night litho — the map cabinet after dark: ink field, cream lettering */
+.dark {
+    --background: #211F18;
+    --foreground: #EDE6D0;
+    --card: #2A2720;
+    --card-foreground: #EDE6D0;
+    --popover: #2A2720;
+    --popover-foreground: #EDE6D0;
+    --primary: #D25A43;
+    --primary-foreground: #F8F4E7;
+    --secondary: #4E6C74;
+    --secondary-foreground: #DCEBEE;
+    --muted: #343128;
+    --muted-foreground: #A89D80;
+    --accent: #B9834F;
+    --accent-foreground: #F6E7D2;
+    --destructive: #D25A43;
+    --border: #EDE6D026;
+    --input: #EDE6D033;
+    --ring: #D25A43;
+    --chart-1: #D25A43;
+    --chart-2: #7FA184;
+    --chart-3: #8FB6BF;
+    --chart-4: #DFA470;
+    --chart-5: #D8C285;
+    --sidebar: #262319;
+    --sidebar-foreground: #EDE6D0;
+    --sidebar-primary: #D25A43;
+    --sidebar-primary-foreground: #F8F4E7;
+    --sidebar-accent: #343128;
+    --sidebar-accent-foreground: #EDE6D0;
+    --sidebar-border: #EDE6D026;
+    --sidebar-ring: #D25A43;
+    --sea: #3E5A61;
+    --shallows: #4E707A;
+    --meadow: #5C6B48;
+    --pasture: #6E6F50;
+    --lowland: #57503A;
+    --sand: #6E6144;
+    --apricot: #8A6A44;
+    --dune: #96633C;
+    --boundary: #7FA184;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans;
+    }
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  /* letterspaced grotesque capitals — Ö S T E R S J Ö N */
+  .map-caps {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    font-weight: 500;
+  }
+  .map-caps-wide {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.6em;
+    font-weight: 400;
+  }
+  /* hydrographic backslant — the reverse italic used for water names.
+     No web font ships one, so we slant the upright font ~12° left
+     (positive skewX leans left in screen coordinates). */
+  .reverse-italic {
+    display: inline-block;
+    transform: skewX(12deg);
+  }
+  /* water label preset: backslanted serif with a whisper of tracking */
+  .map-water {
+    display: inline-block;
+    transform: skewX(12deg);
+    font-family: var(--font-heading);
+    letter-spacing: 0.06em;
+  }
+  /* condensed legend lettering — Teckenförklaring items */
+  .legend-text {
+    font-family: var(--font-condensed);
+    letter-spacing: 0.02em;
+  }
+  /* the double-rule neatline that frames the whole sheet */
+  .frame-double {
+    border: 1px solid currentColor;
+    outline: 3px double currentColor;
+    outline-offset: 4px;
+  }
+  /* legend box with the chamfered (cut) corner */
+  .chamfer {
+    clip-path: polygon(1.25rem 0, 100% 0, 100% 100%, 0 100%, 0 1.25rem);
+  }
+  .chamfer-frame {
+    position: relative;
+  }
+  /* marsh / mosse dot stipple */
+  .pattern-marsh {
+    background-image: radial-gradient(currentColor 0.75px, transparent 0.75px);
+    background-size: 7px 7px;
+  }
+  /* kolförande område cross-hatch */
+  .pattern-hatch {
+    background-image: repeating-linear-gradient(45deg, currentColor 0, currentColor 0.5px, transparent 0.5px, transparent 5px);
+  }
+  /* faint paper grain */
+  .texture-paper {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.32 0 0 0 0 0.25 0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* ruled writing lines for blankett textareas — lines scroll with text */
+  .blankett-lines {
+    line-height: 1.75rem;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(1.75rem - 1px),
+      color-mix(in oklab, currentColor 25%, transparent) calc(1.75rem - 1px),
+      color-mix(in oklab, currentColor 25%, transparent) 1.75rem
+    );
+    background-attachment: local;
+    background-origin: content-box;
+  }
+  /* railway line — black with cross ticks, as an hr */
+  .rule-railway {
+    height: 9px;
+    background:
+      repeating-linear-gradient(90deg, currentColor 0 1.5px, transparent 1.5px 12px) center / 100% 9px no-repeat,
+      linear-gradient(currentColor, currentColor) center / 100% 1.5px no-repeat;
+  }
+}
