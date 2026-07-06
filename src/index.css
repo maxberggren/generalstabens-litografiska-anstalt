@@ -201,7 +201,7 @@
   .map-caps-wide {
     font-family: var(--font-sea);
     text-transform: uppercase;
-    letter-spacing: 0.6em;
+    letter-spacing: 0.4em;
     font-weight: 300;
   }
   /* hydrographic backslant — the reverse italic used for water names.
@@ -228,7 +228,7 @@
     transform: skewX(12deg);
     font-family: var(--font-sea);
     text-transform: uppercase;
-    letter-spacing: 0.6em;
+    letter-spacing: 0.4em;
     font-weight: 300;
   }
   /* condensed legend lettering — Teckenförklaring items */

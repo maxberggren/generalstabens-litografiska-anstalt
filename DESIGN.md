@@ -40,7 +40,7 @@ positive skewX leans left in screen coordinates):
   `0.06em` tracking. Use it for anything liquid: streams of data, live feeds,
   flows.
 - `.map-sea` — the sea-label preset: the hairline sea capitals (Jost,
-  `font-sea`) at `0.6em` tracking in the reverse italic — the full
+  `font-sea`) at `0.4em` tracking in the reverse italic — the full
   ÖSTERSJÖN treatment, as lettered over open water. Upright variant:
   `.map-caps-wide`.
 
@@ -50,7 +50,7 @@ positive skewX leans left in screen coordinates):
   title moments, italic for subtitles/flavour.
 - The signature texture of the map is **letterspaced capitals**:
   `.map-caps` (Archivo, tracking `0.35em`) for section headings,
-  `.map-caps-wide` (Jost hairline, `0.6em`) for "sea names" — big
+  `.map-caps-wide` (Jost hairline, `0.4em`) for "sea names" — big
   quiet labels.
 - Body and UI: Archivo. Legend/table text: Archivo Narrow (`.legend-text`).
 - Italic serif (Bodoni Moda italic) plays the role of the map's italic water
