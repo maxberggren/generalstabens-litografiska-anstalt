@@ -23,6 +23,12 @@ const badgeVariants = cva(
         /* the legend box: paper with an ink hairline */
         outline:
           "border-foreground/60 bg-card text-foreground [a]:hover:bg-muted",
+        /* hypsometric plates — legend chips in the map's field tints */
+        meadow:
+          "border-foreground/60 bg-meadow text-foreground [a]:hover:bg-meadow/80",
+        sand: "border-foreground/60 bg-sand text-foreground [a]:hover:bg-sand/80",
+        apricot:
+          "border-foreground/60 bg-apricot text-foreground [a]:hover:bg-apricot/80",
         /* unboxed map lettering */
         ghost:
           "border-transparent text-foreground hover:bg-muted dark:hover:bg-muted/50",

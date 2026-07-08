@@ -10,12 +10,24 @@ the sheet and white-balanced against the paper stock. This is the reference:
 
 ![The 1951 SKÅNE sheet — the reference](docs/skane-1951-reference.jpg)
 
-The look in one sentence: **soft litho inks on aged wove paper — a didone
+The look in one sentence: **soft litho inks over tinted map fields — a didone
 title voice, letterspaced grotesque capitals, hairline black rules, and a warm
 hypsometric ramp from sea-blue to ridge-apricot, punctuated by one vivid
 vermillion.**
 
 ![The sheet header](docs/screenshots/hero.png)
+
+## The theme in use — Skånelinjen
+
+The repo ships a full demo site set in the theme (`src/Site.tsx`, served at
+`#site`): Skånelinjen, a fictional 1951 excursion bureau. It shows the
+sheet's balance carried into a real page — a sea-blue header with
+shore-ripple, paper legend boxes floating on it, meadow and sand section
+fields, and a länsgräns-green colophon:
+
+![Skånelinjen — hero on the sea](docs/screenshots/site-hero.png)
+![Hypsometric cards & census timetable](docs/screenshots/site-fields.png)
+![The booking blankett on the meadow](docs/screenshots/site-blankett.png)
 
 ## The voice
 
@@ -23,8 +35,10 @@ vermillion.**
   slips with hairline ink rules and flat *offset print shadows* (a second
   sheet beneath), never a blur.
 - **Print has no rounded corners.** `--radius: 0` everywhere.
-- **Color is spot ink.** Large calm fields of paper, sea and sand; one
-  vermillion accent per view, used like the map's city dots.
+- **The fields carry the color.** The page sits on the lowland tint and whole
+  sections print as sea, meadow, shallows and sand; bright paper is reserved
+  for the legend boxes (cards) that float on them. One vermillion accent per
+  view, used like the map's city dots.
 - **Letterspaced capitals do the work bold does in modern UIs.**
 - **Forms are blanketter** — dotted writing lines, typewritten entries,
   captions in condensed spärrad small caps.
@@ -33,7 +47,7 @@ vermillion.**
 
 | Role | Face | Why |
 |---|---|---|
-| Display | **Bodoni Moda** | The didone title lettering of *SKÅNE* |
+| Display | **Bodoni Moda** | The didone title lettering of *SKÅNE* — hero titles always in spärrad capitals |
 | UI / labels | **Archivo** | The Venus/Akzidenz-style grotesque map labels (SMÅLAND, TECKENFÖRKLARING) |
 | Sea & water names | **Jost** | The hairline geometric sea capitals (Ö S T E R S J Ö N) and the light monoline water italics (*Falsterbo rev*) |
 | Legend / tables | **Archivo Narrow** | The condensed legend lettering |
@@ -47,15 +61,14 @@ voice — all matched against the photographed sheet.
 
 ## Palette
 
-Paper `#F2EDDE` · Ink `#26231C` · Stad-vermillion `#BE3A2B` · Öresund
-`#A9C8CF` · Apricot `#EAC094` · Länsgräns green `#47694F` — and the full
-hypsometric ramp off the legend, exposed as CSS variables:
+Lowland plain `#EAE3C6` (the page itself) · Paper `#F2EDDE` · Ink `#26231C` ·
+Stad-vermillion `#BE3A2B` · Öresund `#A3C6CE` · Apricot `#EAC094` · Länsgräns
+green `#47694F` — and the full hypsometric ramp off the legend, exposed as
+CSS variables:
 `--sea → --shallows → --meadow → --pasture → --lowland → --sand → --apricot → --dune`.
 
 Two modes: **paper litho** (day) and **night litho** (the map cabinet after
-dark — ink field, cream lettering).
-
-![Night litho](docs/screenshots/hero-dark.png)
+dark — ink field, cream lettering; toggle the `dark` class to see it).
 
 The full spec — sampled values, semantic token mapping, ornament utilities,
 component doctrine — lives in [DESIGN.md](DESIGN.md).
@@ -89,7 +102,6 @@ ruled textarea, printed tick-boxes, köping-ring radios, signal-lever switch,
 stad-dot slider, and the skala-bar progress.
 
 ![Forms](docs/screenshots/forms.png)
-![Forms, night litho](docs/screenshots/forms-dark.png)
 
 ### V · Beteckningar — badges & alerts
 Badges are square-set legend labels; alerts are marginal notices with a heavy
@@ -163,7 +175,6 @@ The sheet-edge terrain profile as a Recharts area chart: dune-orange under an
 ink stroke, dotted grid, Courier axis figures.
 
 ![Profile chart](docs/screenshots/profile-chart.png)
-![Profile chart, night litho](docs/screenshots/profile-chart-dark.png)
 
 ---
 
@@ -211,7 +222,9 @@ adopt it in an existing shadcn app:
    setting the `dark` class on `<html>`.
 
 The showcase itself is one file — [`src/App.tsx`](src/App.tsx) — and doubles
-as usage documentation for every component.
+as usage documentation for every component. The Skånelinjen demo site —
+[`src/Site.tsx`](src/Site.tsx), served at `#site` — shows how to lay out a
+real page with the map's field colors.
 
 ## License
 

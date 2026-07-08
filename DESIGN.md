@@ -6,10 +6,16 @@ Söners Förlag, printed by **Generalstabens Litografiska Anstalt, Stockholm**,
 approved for publication 22 October 1951). The palette below was sampled from
 photographs of the sheet and white-balanced against the paper stock.
 
-The look in one sentence: **soft litho inks on aged wove paper — a didone title
-voice, letterspaced grotesque capitals, hairline black rules, and a warm
+The look in one sentence: **soft litho inks over tinted map fields — a didone
+title voice, letterspaced grotesque capitals, hairline black rules, and a warm
 hypsometric ramp from sea-blue to ridge-apricot, punctuated by one vivid
 vermillion.**
+
+Like the sheet itself, the UI is **not** an off-white document: the page sits
+on the lowland tint, whole sections print as sea, meadow, shallows and sand
+fields, and bright paper is reserved for what floats on the map — legend
+boxes (cards), popovers, the margin strips. Aim for the sheet's balance:
+roughly two-thirds tinted field, one-third paper.
 
 ---
 
@@ -47,8 +53,11 @@ positive skewX leans left in screen coordinates):
 
 **Rules of use**
 
-- Display headings: Bodoni Moda, weight 700–900, tracking `+0.08em`, caps for
-  title moments, italic for subtitles/flavour.
+- Display headings: Bodoni Moda, weight 700–900, tracking `+0.06–0.08em`.
+  **Hero-scale titles are always capitals** — `h1` uppercases in the base
+  layer, lettering like the sheet title SKÅNE. At smaller sizes (card
+  titles, dialog headings, italic asides) the didone speaks in mixed case,
+  like the sheet's credit line.
 - The signature texture of the map is **letterspaced capitals**:
   `.map-caps` (Archivo, tracking `0.35em`) for section headings,
   `.map-caps-wide` (Jost hairline, `0.4em`) for "sea names" — big
@@ -82,17 +91,20 @@ Sampled from the sheet (white-balanced to paper = `#F4EFE1`):
 
 | Token | Value | Note |
 |---|---|---|
-| `--background` / `--foreground` | `#F2EDDE` / `#26231C` | paper & ink |
-| `--card`, `--popover` | `#F8F4E7` | legend-box paper |
+| `--background` / `--foreground` | `#EAE3C6` / `#26231C` | the lowland plain & ink — the page is tinted map field, not paper |
+| `--paper` | `#F2EDDE` | aged margin paper, for full-bleed paper strips |
+| `--card`, `--popover` | `#F8F4E7` | legend-box paper — floats bright on the field |
 | `--primary` | `#BE3A2B` | the one loud ink — use sparingly, like city dots |
-| `--secondary` | `#A9C8CF` | Öresund blue |
+| `--secondary` | `#A3C6CE` | Öresund blue |
 | `--accent` | `#EAC094` | ridge apricot |
-| `--muted` | `#E9E2C8` / fg `#6E6650` | lowland sand |
+| `--muted` | `#E4D9B2` / fg `#6B6248` | sand plain |
 | `--destructive` | `#9E2F21` | deep boundary red |
-| `--border`, `--input` | `#CFC5A6` | warm hairline |
+| `--border`, `--input` | `#C6B98F` | warm hairline |
 | `--ring` | `#BE3A2B` | vermillion focus |
+| `--boundary` / fg | `#47694F` / `#EDE6D0` | länsgräns green — footers, checked levers |
+| `--sidebar` | `#C9DCE0` | the sidebar is the sea margin |
 | `--chart-1…5` | `#BE3A2B` `#47694F` `#8FB6BF` `#DFA470` `#D8C285` | spot inks |
-| `--radius` | `0.3rem` | crisp print corners |
+| `--radius` | `0rem` | crisp print corners |
 
 Plus a named **hypsometric ramp** for sequential data:
 `--sea → --shallows → --meadow → --pasture → --lowland → --sand → --apricot → --dune`.
@@ -108,8 +120,10 @@ lettering. Background `#211F18`, foreground `#EDE6D0`, vermillion brightened to
 Signature details lifted straight off the sheet, provided as utilities in
 `src/index.css`:
 
-- `.frame-double` — the double-rule **neatline** that frames the sheet (thin
-  inner rule + offset double outer rule). Use on hero/header blocks.
+- `.frame-double` — the double-rule **neatline** that frames the sheet:
+  exactly two thin rules, offset from the element, with nothing printed
+  inside them. Use on hero/header blocks and featured legend boxes; it *is*
+  the elevation — never pair it with a shadow.
 - `.chamfer` — the legend box's **cut corner** (top-left 45° chamfer). Use on
   featured cards.
 - `.rule-railway` — a railway line as a horizontal rule: solid line with
@@ -117,22 +131,41 @@ Signature details lifted straight off the sheet, provided as utilities in
 - `.pattern-marsh` — the *mosse och sankmark* dot stipple.
 - `.pattern-hatch` — the *kolförande område* 45° hatch.
 - `.texture-paper` — faint SVG fractal grain over the background.
+- `.pattern-water` — the sea's horizontal shore-ripple lines, for sea-blue
+  header fields (mask it away under lettering).
+- Scrollbars are global: slim ink rules on a transparent track
+  (`scrollbar-color`), square like everything else in the print.
 - `.map-caps`, `.map-caps-wide`, `.legend-text` — see typography.
 
 Marker conventions (from the teckenförklaring): filled vermillion dot = primary
 item (*stad*); vermillion ring = secondary (*köping*); small ink dot = tertiary
 (*annan viktigare ort*). Used for list bullets and table row markers.
 
+**The fields carry the color.** Components draw the map's tints into their
+own chrome: the table header is a sand band under its double rule; Progress
+is segmented ink filling in over shallow water; the slider is a stad dot
+riding a sea-blue channel; the switch levers to länsgräns green when on;
+avatar fallbacks sit in the shallows; alerts come in `sea`, `meadow` and
+`sand` variants (notices printed over water, meadow and dune); badges add
+`meadow`, `sand` and `apricot` hypsometric plates beside the vermillion and
+sea ones. At the layout level, print whole sections as fields — a sea-blue
+header (add `.pattern-water` shore-ripple), `bg-meadow/70` form bands,
+`bg-sand/60` FAQ dunes, `bg-shallows/80` chart water, a `bg-boundary`
+colophon in cream lettering — and let paper cards float on them like legend
+boxes. Full-bleed paper strips (`bg-paper`) between fields read as the
+sheet's margin.
+
 **Forms are blanketter.** Inputs are writing lines, not boxes: a dotted ink
 rule to write on, caption printed above in condensed spärrad small caps
-(Label), and the *entry itself typewritten* in Courier Prime while
-placeholders stay italic like a clerk's pencil note. Focus turns the rule
+(Label), and the *entry itself typewritten* in Courier Prime. Placeholders
+are the same typewriter face in muted italic — same metrics as the entry, so
+the line doesn't shift when typing begins. Focus turns the rule
 solid vermillion with a faint ink wash — no glow rings. Textareas carry ruled
 writing lines that scroll with the text (`.blankett-lines`). Checkboxes are
 square printed tick-boxes; radios are köping-rings that fill to a stad dot;
-the switch is a square signal lever; the slider is a stad dot riding a drawn
-line; and Progress is the map's *skala bar* — a hairline-ruled box filling
-with segmented ink.
+the switch is a square signal lever that prints länsgräns-green when thrown;
+the slider is a stad dot riding a sea channel; and Progress is the map's
+*skala bar* — segmented ink filling in over the shallows.
 
 **Spacing is period-generous.** Print corners are square everywhere
 (`--radius: 0`), cards are legend boxes with hairline ink rules and roomy
@@ -227,12 +260,19 @@ are ink; the command palette's search field is a blankett writing line.
 ## 4 · Voice
 
 Borders are hairline and ink-colored, never gray-on-gray. Shadows are nearly
-absent — print has no elevation; separation comes from paper tone and rules.
-Color is deployed like spot ink: large calm fields of paper/sea/sand, one
-vermillion accent per view. Letterspaced caps do the work that bold weight does
-in modern UIs.
+absent — print has no elevation; separation comes from field tone and rules.
+Color is deployed like the sheet deploys it: large calm fields of sea, meadow,
+lowland and sand doing the structural work, bright paper reserved for the
+legend boxes that float on them, and one vermillion accent per view.
+Letterspaced caps do the work that bold weight does in modern UIs.
+
+Ornament earns its keep sparingly: the double-rule neatline (`.frame-double`)
+frames two or three featured surfaces per page — a hero legend box, a chart,
+an almanac — never every card.
 
 ---
 
-*Files: theme in `src/index.css`, showcase in `src/App.tsx`.
-Run `npm install && npm run dev`, or `npm run build` and serve `dist/`.*
+*Files: theme in `src/index.css`, showcase in `src/App.tsx`, and a full demo
+site — Skånelinjen, an excursion bureau set in the theme — in `src/Site.tsx`
+(served at `#site`). Run `npm install && npm run dev`, or `npm run build` and
+serve `dist/`.*

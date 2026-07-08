@@ -176,7 +176,7 @@ export default function App() {
           <div className="map-caps-wide mb-6 text-xs text-muted-foreground">
             Generalstabens Litografiska Anstalt · Stockholm
           </div>
-          <h1 className="font-heading text-7xl font-black tracking-[0.08em] sm:text-8xl">
+          <h1 className="font-heading text-6xl font-black tracking-[0.08em] sm:text-8xl">
             SKÅNE
           </h1>
           <p className="font-heading mt-4 text-lg italic">
@@ -189,6 +189,11 @@ export default function App() {
             <Badge>Design System</Badge>
             <Badge variant="secondary">shadcn/ui</Badge>
             <Badge variant="outline">v1.0 · 1951</Badge>
+          </div>
+          <div className="mt-5">
+            <Button variant="link" className="h-auto whitespace-normal" asChild>
+              <a href="#site">Se temat i bruk — Skånelinjen, sommarturer 1951 »</a>
+            </Button>
           </div>
           <div className="absolute right-4 top-4">
             <Tooltip>
@@ -205,7 +210,7 @@ export default function App() {
         {/* ============ 1 · PALETTE ============ */}
         <SectionTitle no="I.">Färgerna · The Litho Inks</SectionTitle>
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-4">
-          <Swatch name="Paper" cssVar="--background" note="aged wove stock" />
+          <Swatch name="Slätten" cssVar="--background" note="the lowland plain" />
           <Swatch name="Ink" cssVar="--foreground" note="soft litho black" />
           <Swatch name="Stad-vermillion" cssVar="--primary" note="city dots, landskapsgräns" />
           <Swatch name="Öresund" cssVar="--secondary" note="open sea" />
@@ -647,7 +652,7 @@ export default function App() {
               </div>
               <div className="space-y-2">
                 <Label>Tryckta skikt (Toggle Group)</Label>
-                <ToggleGroup type="multiple" defaultValue={["hojd", "jarnvag"]} variant="outline" className="gap-1.5">
+                <ToggleGroup type="multiple" defaultValue={["hojd", "jarnvag"]} variant="outline" className="flex-wrap gap-1.5">
                   <ToggleGroupItem value="hojd"><Mountain data-slot="icon" />Höjdskikt</ToggleGroupItem>
                   <ToggleGroupItem value="jarnvag"><TrainFront data-slot="icon" />Järnväg</ToggleGroupItem>
                   <ToggleGroupItem value="vatten"><Waves data-slot="icon" />Vattendjup</ToggleGroupItem>

@@ -24,7 +24,8 @@ function Tabs({
 
 /* kartblad register: paper folder-tabs standing on an ink baseline */
 const tabsListVariants = cva(
-  "group/tabs-list inline-flex w-full items-end justify-start rounded-none bg-transparent p-0 text-muted-foreground group-data-horizontal/tabs:h-9 group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col",
+  /* min-h + wrap so the register survives narrow sheets */
+  "group/tabs-list inline-flex w-full flex-wrap items-end justify-start gap-y-1 rounded-none bg-transparent p-0 text-muted-foreground group-data-horizontal/tabs:min-h-9 group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col group-data-vertical/tabs:flex-nowrap",
   {
     variants: {
       variant: {

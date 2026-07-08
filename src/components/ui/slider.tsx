@@ -38,7 +38,8 @@ function Slider({
     >
       <SliderPrimitive.Track
         data-slot="slider-track"
-        className="relative grow overflow-hidden rounded-none bg-foreground/30 data-horizontal:h-0.5 data-horizontal:w-full data-vertical:h-full data-vertical:w-0.5"
+        /* the drawn line is a sea-blue channel; the range prints in ink-red */
+        className="relative grow overflow-hidden rounded-none border-y border-foreground/25 bg-sea data-horizontal:h-1 data-horizontal:w-full data-vertical:h-full data-vertical:w-1 data-vertical:border-x data-vertical:border-y-0"
       >
         <SliderPrimitive.Range
           data-slot="slider-range"

@@ -11,6 +11,12 @@ const alertVariants = cva(
         default: "border-l-foreground/70 bg-card text-card-foreground",
         destructive:
           "border-l-destructive bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current",
+        /* notices printed over the map's tinted fields — informational
+           over water, confirmatory over meadow, advisory over sand */
+        sea: "border-l-boundary bg-shallows/70 text-foreground *:data-[slot=alert-description]:text-foreground/70 dark:bg-shallows/40",
+        meadow:
+          "border-l-boundary bg-meadow/60 text-foreground *:data-[slot=alert-description]:text-foreground/70 dark:bg-meadow/40",
+        sand: "border-l-dune bg-sand/70 text-foreground *:data-[slot=alert-description]:text-foreground/70 dark:bg-sand/40",
       },
     },
     defaultVariants: {
