@@ -230,8 +230,10 @@ its own install instructions in the Teckenförklaring band.
 
 ## License
 
-MIT. The fonts are loaded via [Fontsource](https://fontsource.org) under the
-SIL Open Font License. The original 1951 map that inspired this theme was
+[MIT-0](LICENSE) — MIT No Attribution. Use, copy, modify, sell; no
+attribution required, no strings attached. Take the theme, drop it in your
+app, ship it. The fonts are loaded via [Fontsource](https://fontsource.org)
+under the SIL Open Font License. The original 1951 map that inspired this theme was
 published by P.A. Norstedt & Söners Förlag and printed by Generalstabens
 Litografiska Anstalt, Stockholm — this project is an homage, unaffiliated
 with either.
