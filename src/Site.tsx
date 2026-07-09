@@ -422,7 +422,7 @@ export default function Site() {
       {/* ============ THE LEGEND — what this sheet is, and how to print
           your own. Kept early: the reader should know they are holding a
           provtryck before they reach the timetable. ============ */}
-      <section id="installation" className="border-b border-foreground/40 bg-lowland/70 dark:bg-lowland/45">
+      <section id="installation" className="border-b border-foreground/40 bg-shallows/60 dark:bg-shallows/35">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
           <div className="mb-8 flex items-baseline gap-4">
             <h2 className="map-caps text-lg">Teckenförklaring</h2>
