@@ -19,8 +19,9 @@ vermillion.**
 
 ## The theme in use — Skånelinjen
 
-The repo ships a full demo site set in the theme (`src/Site.tsx`, served at
-`#site`): Skånelinjen, a fictional 1951 excursion bureau. It shows the
+The repo ships a full demo site set in the theme (`src/Site.tsx` — the
+default page; the component showcase lives at `#components`): Skånelinjen,
+a fictional 1951 excursion bureau. It shows the
 sheet's balance carried into a real page — a sea-blue header with
 shore-ripple, paper legend boxes floating on it, meadow and sand section
 fields, and a länsgräns-green colophon:
@@ -221,10 +222,11 @@ adopt it in an existing shadcn app:
    `components/ui/sonner`) once at your app root, and toggle night litho by
    setting the `dark` class on `<html>`.
 
-The showcase itself is one file — [`src/App.tsx`](src/App.tsx) — and doubles
-as usage documentation for every component. The Skånelinjen demo site —
-[`src/Site.tsx`](src/Site.tsx), served at `#site` — shows how to lay out a
-real page with the map's field colors.
+The showcase itself is one file — [`src/App.tsx`](src/App.tsx), served at
+`#components` — and doubles as usage documentation for every component. The
+Skånelinjen demo site — [`src/Site.tsx`](src/Site.tsx), the default page —
+shows how to lay out a real page with the map's field colors, and carries
+its own install instructions in the Teckenförklaring band.
 
 ## License
 
